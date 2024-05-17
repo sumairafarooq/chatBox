@@ -9,7 +9,7 @@ import  io from 'socket.io-client';
 export class SocketService {
 
 
-  private socket = io('http://localhost:8000');
+  private socket = io('http://localhost:8001');
   constructor() { }
 
   sendMessage(data:any) {

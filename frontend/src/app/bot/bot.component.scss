@@ -1,9 +1,11 @@
-.body { 
+.bot { 
+    position: fixed;
+    align-items: right;
 	color: #421; 
 	font-weight: bold; 
 	font-size: 18px; 
 	font-family: "Courier New"; 
-    background:rgb(223 247 229); 
+    background:blue; 
     content: '';
     // background-image: url('../assets/Chatbot.png');
     // background-repeat: no-repeat; 
