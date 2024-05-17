@@ -1,4 +1,4 @@
-<section>
+<!-- <section>
 
 <div class="bot">
     <div id="main">
@@ -8,4 +8,37 @@
       </div>
    </div>
   </div>
+</section> -->
+<section> 
+    <img src="../../assets/robot.png" class="botpic" (click)="showrobotdiv()">
+        <div id="main" [hidden]="showChatDiv">
+            <div class="row">
+                <div class="upperdiv" #scrollFrame>
+                    <span class="btn-bot">
+                        <img src="../../assets/robot_chat.png" class="botchat">
+                        <span class="bubble left">Welcome</span>
+                    </span>
+                    <br>
+                    <div *ngFor="let item of messageArray">
+                        <br>
+                        <span *ngIf="item.name == 'bot'" class="btn-bot">
+                            <img src="../../assets/robot_chat.png" class="botchat">
+                            <span class="bubble left">{{item.message}}</span>
+                        </span><br>
+                        <span *ngIf="item.name != 'bot'" class="btn-user">
+                            <span class="bubble right">{{item.message}}</span>
+                            <img src="../../assets/user_chat.png" class="botchat">
+                        </span><br>
+                    </div>
+                </div>
+
+                <div class="bottomdiv">
+                
+                            <input id="input" type="text" placeholder="Say something..." autocomplete="off"
+                                [(ngModel)]='message' (keyup.enter)="sendMessage()" />
+                            <button (click)="sendMessage()">Send</button>
+                        
+                </div>
+            </div>
+        </div>
 </section>

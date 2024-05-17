@@ -1,11 +1,11 @@
 .bot { 
-    position: fixed;
-    align-items: right;
+    // position: fixed;
+    // align-items: right;
 	color: #421; 
-	font-weight: bold; 
+	// font-weight: bold; 
 	font-size: 18px; 
 	font-family: "Courier New"; 
-    background:blue; 
+     background-color: rgb(76, 180, 180);
     content: '';
     // background-image: url('../assets/Chatbot.png');
     // background-repeat: no-repeat; 
@@ -28,7 +28,7 @@
     position: fixed;
     bottom: 7em;
     right: 1em;
-    background: #595959;;
+    background-image: linear-gradient(to right, rgb(221, 221, 145), pink);
     color: white;
     max-height: 300px;
     width: 300px;
@@ -80,7 +80,7 @@
   content: '';
   position: absolute;
   inset: -1px 30px;
-  background: #00c2cb;
+  background: black;
   transition: 500ms;
   animation: rotate 4s linear infinite;
   z-index: -1;
@@ -127,28 +127,30 @@
       radial-gradient(100% 100% at var(--_p) 0,#0000 99%,#000 102%) 
         var(--_p) 100%/var(--t) var(--t) no-repeat,
       linear-gradient(#000 0 0) padding-box;
-    // background: linear-gradient(135deg,#FE6D00,#1384C5) border-box;
+    background: linear-gradient(135deg,#FE6D00,#1384C5) border-box;
     color: #fff;
   }
   .left {
     --_p: 0;
     border-bottom-left-radius: 0 0;
     place-self: start;
-    background: linear-gradient(135deg,#acfaa2,#1384C5) border-box;
+    background: linear-gradient(135deg,#ba49d6,#1393c5) border-box;
   }
   .right {
     --_p: 100%;
     border-bottom-right-radius: 0 0;
     place-self: end;
-    background: linear-gradient(135deg,#d31d45,#1384C5) border-box;
+    background: linear-gradient(135deg,#1dd335,#c59c13) border-box;
   }
   .bottomdiv{
     margin-top:10px
   }
   button{
     width: 50px;
-    padding: 15px;
+    height: 40px;
+    // padding: 15px;
     border-radius: 5px;
-    background: #94dfff;
+    background: rgb(44, 167, 224);
     border: 1px solid #2a67ff;
+    // color: black;
   }
