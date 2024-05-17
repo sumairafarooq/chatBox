@@ -15,6 +15,7 @@ const trigger = [
       "what call yourself"
     ],
     ["i love you"],
+    ["hw r u?"]
     ["happy", "good", "fun", "wonderful", "fantastic", "cool"],
     ["bad", "bored", "tired"],
     ["help me", "tell me story", "tell me joke"],
@@ -42,6 +43,7 @@ const trigger = [
       "I don't know actually"
     ],
     ["I am infinite"],
+    ["i am good"]
     ["I am just a bot", "I am a bot. What are you?"],
     ["The one true God, JavaScript"],
     ["I am nameless", "I don't have a name"],
