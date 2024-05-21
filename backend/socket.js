@@ -36,9 +36,11 @@ function proccessMessage(input) {
         if (triggerArray[x][y] == string) {
           items = replyArray[x];
           item = items[Math.floor(Math.random() * items.length)];
+          return item;
         }
       }
     }
+    item = alternative[Math.floor(Math.random() * alternative.length)];
     return item;
   }
 

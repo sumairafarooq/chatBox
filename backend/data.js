@@ -15,7 +15,7 @@ const trigger = [
       "what call yourself"
     ],
     ["i love you"],
-    ["hw r u?"]
+    ["hw r u"],
     ["happy", "good", "fun", "wonderful", "fantastic", "cool"],
     ["bad", "bored", "tired"],
     ["help me", "tell me story", "tell me joke"],
