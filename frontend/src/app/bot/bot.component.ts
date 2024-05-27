@@ -10,9 +10,12 @@ export class BotComponent implements AfterViewChecked {
   @ViewChild('scrollFrame') scrollFrame!: ElementRef;
   title = 'Simple and EasyChatbot';
   messageArray: any = [];
+  
+  messageArrayOptions: any =[];
   synth:any;
   voices:any;
   showChatDiv: boolean = false;
+  autoScroll: boolean = false;
   constructor(private socketService:SocketService) {
     this.synth = window.speechSynthesis;
     this.voices = this.synth.getVoices();
@@ -35,8 +38,56 @@ export class BotComponent implements AfterViewChecked {
     this.socketService.receiveReply().subscribe(data=> {
       this.messageArray.push({name:'bot', message: data.outputMessage});
       this.speak(data.outputMessage);
+  
     });
-
+    this.messageArrayOptions=[{name:'bot', message: "Address"},{name:'bot', message: "Search"}]
+  }
+  autoOptions(mess: any) {
+    switch (mess) {
+      case "Address": {
+        this.message = mess
+        this.messageArray.push({ name: 'you', message: this.message });
+        this.messageArrayOptions = []
+        this.messageArrayOptions.push(
+          { name: 'bot', message: "New" },
+          { name: 'bot', message: "More Options" }
+        );
+        this.message = '';
+        break;
+      }
+      case "More Options": {
+        this.message = mess
+        this.messageArray.push({ name: 'you', message: this.message });
+        this.message = '';
+        this.defaultmessage()
+        break;
+      }
+      case "IP": {
+        this.message = mess
+        this.messageArray.push({ name: 'you', message: this.message });
+        this.messageArray.push({ name: 'bot', message: "Enter IP Address" });
+        this.message = '';
+        this.messageArrayOptions = []
+        this.messageArrayOptions.push(
+          { name: 'bot', message: "More Options" }
+        );
+        break;
+      }
+      default: {
+        this.message = mess
+        this.messageArrayOptions = []
+        this.sendMessage()
+        this.messageArrayOptions.push(
+          { name: 'bot', message: "More Options" }
+        );
+        break;
+      }
+    }
+    this.autoScroll = true;
+    setTimeout(() => this.scrollToBottom(), 100); // Ensure DOM has updated
+  }
+  defaultmessage() {
+    this.messageArrayOptions=[{name:'bot', message: "Address"},{name:'bot', message: "Search"}]
   }
   sendMessage(){
     const data = { message:this.message };

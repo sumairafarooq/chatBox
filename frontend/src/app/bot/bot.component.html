@@ -16,7 +16,7 @@
                 <div class="upperdiv" #scrollFrame>
                     <span class="btn-bot">
                         <img src="../../assets/robot_chat.png" class="botchat">
-                        <span class="bubble left">Welcome</span>
+                        <span class="bubble left">Welcome!how may I help</span>
                     </span>
                     <br>
                     <div *ngFor="let item of messageArray">
@@ -30,13 +30,24 @@
                             <img src="../../assets/user_chat.png" class="botchat">
                         </span><br>
                     </div>
+                    <br>
+                    <div *ngFor="let item of messageArrayOptions">
+                        <span>
+                            <!-- <span class="btn" (click)="autoOptions(item.message)">{{item.message}}</span> -->
+                           <button class="txtBtn"><span class="btn" (click)="autoOptions(item.message)">{{item.message}}</span>
+                        </button>
+                        </span>
+                    
+                    <br>
+                    
+                    </div>
                 </div>
 
                 <div class="bottomdiv">
                 
-                            <input id="input" type="text" placeholder="Say something..." autocomplete="off"
+                            <input id="input" type="text" placeholder="Type something..." autocomplete="off"
                                 [(ngModel)]='message' (keyup.enter)="sendMessage()" />
-                            <button (click)="sendMessage()">Send</button>
+                            <button (click)="sendMessage()"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
                         
                 </div>
             </div>

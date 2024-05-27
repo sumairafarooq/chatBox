@@ -1,6 +1,6 @@
 const SocketIO = require('socket.io');
 
-const {trigger, reply, alternative, coronavirus} = require('./data');
+const {trigger, reply, alternative} = require('./data');
 
 function proccessMessage(input) {
     let output;
@@ -21,8 +21,6 @@ function proccessMessage(input) {
     const match = compare(trigger, reply, text)
     if (match) {
       output = match;
-    } else if (text.match(/coronavirus/gi)) {
-      output = coronavirus[Math.floor(Math.random() * coronavirus.length)];
     } else {
       output = alternative[Math.floor(Math.random() * alternative.length)];
     }
