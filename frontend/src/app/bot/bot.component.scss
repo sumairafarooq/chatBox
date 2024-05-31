@@ -1,167 +1,163 @@
 .bot { 
-  // position: fixed;
-  // align-items: right;
-color: #421; 
-// font-weight: bold; 
-font-size: 18px; 
-font-family: "Courier New"; 
-   background-color: rgb(76, 180, 180);
-  content: '';
-  // background-image: url('../assets/Chatbot.png');
-  // background-repeat: no-repeat; 
-  opacity: 0.5;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: absolute;
-  z-index: 100;
+    // position: fixed;
+    // align-items: right;
+	color: #421; 
+	// font-weight: bold; 
+	font-size: 18px; 
+	font-family: "Courier New"; 
+     background-color: rgb(76, 180, 180);
+    content: '';
+    // background-image: url('../assets/Chatbot.png');
+    // background-repeat: no-repeat; 
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: 2;
 }
 
 .content {
-margin: auto;
-width: 50%;
-padding: 10px;
+	margin: auto;
+	width: 50%;
+	padding: 10px;
 }
 
 #main { 
-  position: fixed;
-  bottom: 7em;
-  right: 1em;
-  background-color: #000000;
-  color: white;
-  max-height: 325px;
-  width: 325px;
-  // overflow: auto;
-  border: 1px solid #fa0000;
-  padding: 20px;
-  border-radius: 15px;
-  z-index: 100;
-
- 
-
+    position: fixed;
+    bottom: 7em;
+    right: 1em;
+    background-color: #000000;
+    color: white;
+    max-height: 300px;
+    width: 300px;
+    // overflow: auto;
+    border: 1px solid #a0a0a0;
+    padding: 20px;
+    border-radius: 15px;
 }
 .upperdiv{
-  max-height: 250px;
-  overflow: auto;
-  width: 100%;
+    max-height: 250px;
+    overflow: auto;
+    width: 100%;
 }
 ::-webkit-scrollbar-track
 {
--webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-border-radius: 10px;
-// background-color: #F5F5F5;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	// background-color: #F5F5F5;
 }
 ::-webkit-scrollbar
 {
-width: 12px;
-background-color: #F5F5F5;
-  border-radius: 10px;
+	width: 12px;
+	background-color: #F5F5F5;
+    border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb
 {
-border-radius: 10px;
--webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-background-color: rgb(0, 70, 35);
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: rgb(0, 70, 35);
 }
 #input { 
-border: 0;  
-border: 1px solid #421; 
-  width: 200px;
-  padding: 15px;
-  border-radius: 5px;
+	border: 0;  
+	border: 1px solid #421; 
+    width: 200px;
+    padding: 15px;
+    border-radius: 5px;
 }
 .botpic{
-  bottom: 1em;
-  right: 1em;
-  position: fixed;
-  width: 80px;
-  border-radius: 50%;
-  z-index: 2;
-  cursor: pointer;
+    bottom: 1em;
+    right: 1em;
+    position: fixed;
+    width: 80px;
+    border-radius: 50%;
+    z-index: 2;
+    cursor: pointer;
 }
 .botpic::before{
-content: '';
-position: absolute;
-inset: -1px 30px;
-background: black;
-transition: 500ms;
-animation: rotate 4s linear infinite;
-z-index: 2;
+  content: '';
+  position: absolute;
+  inset: -1px 30px;
+  background: black;
+  transition: 500ms;
+  animation: rotate 4s linear infinite;
+  z-index: -1;
 }
 @keyframes rotate {
-  0%{
-    transform: rotate(0deg);
+    0%{
+      transform: rotate(0deg);
+    }
+    100%{
+      transform: rotate(360deg);
+    }
   }
-  100%{
-    transform: rotate(360deg);
-  }
-}
 .btn-bot{
-  float: left;
+    float: left;
 }
 .btn-user{
 
-  float: right;
+    float: right;
 }
 .botchat{
-  width: 40px;
+    width: 40px;
 }
 .background_bot{
-  background: #e9ffe7;
-  border-radius: 5px;
-  color: black;
-  padding: 5px;
+    background: #e9ffe7;
+    border-radius: 5px;
+    color: black;
+    padding: 5px;
 }
 .background_user{
-  color: black;
-  padding: 5px;
-  background: #fff;
-  border-radius: 5px;
+    color: black;
+    padding: 5px;
+    background: #fff;
+    border-radius: 5px;
 }
 .bubble {
-  --r: 1em;  /* the radius */
-  --t: 1.5em; /* the size of the tail */
-  
-  max-width: 300px;
-  padding: 0.5em;
-  border-inline: var(--t) solid #0000;
-  border-radius: calc(var(--r) + var(--t))/var(--r);
-  mask: 
-    radial-gradient(100% 100% at var(--_p) 0,#0000 99%,#000 102%) 
-      var(--_p) 100%/var(--t) var(--t) no-repeat,
-    linear-gradient(#000 0 0) padding-box;
-  background: linear-gradient(135deg,#b8f70e,#1384C5) border-box;
-  color: #fff;
-}
-.left {
-  --_p: 0;
-  border-bottom-left-radius: 0 0;
-  place-self: start;
-  background: linear-gradient(135deg,#ba49d6,#470bec) border-box;
-}
-.right {
-  --_p: 100%;
-  border-bottom-right-radius: 0 0;
-  place-self: end;
-  background: linear-gradient(135deg,#61da71,#135ac5) border-box;
-}
-.bottomdiv{
-  margin-top:10px
-}
-button{
-  width: 50px;
-  height: 45px;
-  // padding: 15px;
-  border-radius: 5px;
-  background: rgb(81, 178, 223);
-  border: 1px solid #ff2a2a;
-  // color: black;
-}
-.txtBtn{
-  border-radius: 5px;
-  background: rgb(235, 206, 226);
-  width: 100%;
-  align-items: center;
-  padding: 10px 10px 10px;
-}
+    --r: 1em;  /* the radius */
+    --t: 1.5em; /* the size of the tail */
+    
+    max-width: 300px;
+    padding: 0.5em;
+    border-inline: var(--t) solid #0000;
+    border-radius: calc(var(--r) + var(--t))/var(--r);
+    mask: 
+      radial-gradient(100% 100% at var(--_p) 0,#0000 99%,#000 102%) 
+        var(--_p) 100%/var(--t) var(--t) no-repeat,
+      linear-gradient(#000 0 0) padding-box;
+    background: linear-gradient(135deg,#FE6D00,#1384C5) border-box;
+    color: #fff;
+  }
+  .left {
+    --_p: 0;
+    border-bottom-left-radius: 0 0;
+    place-self: start;
+    background: linear-gradient(135deg,#ba49d6,#1393c5) border-box;
+  }
+  .right {
+    --_p: 100%;
+    border-bottom-right-radius: 0 0;
+    place-self: end;
+    background: linear-gradient(135deg,#1dd335,#c59c13) border-box;
+  }
+  .bottomdiv{
+    margin-top:10px
+  }
+  button{
+    width: 50px;
+    height: 40px;
+    // padding: 15px;
+    border-radius: 5px;
+    background: rgb(44, 167, 224);
+    border: 1px solid #2a67ff;
+    // color: black;
+  }
+  .txtBtn{
+    width: 100%;
+    height: 30px;
+    padding: 15px;
+    border-radius: 5px;
+    background: rgb(233, 156, 210);
+  }
