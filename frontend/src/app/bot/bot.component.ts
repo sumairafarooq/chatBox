@@ -1,6 +1,8 @@
 
 import { Component,ViewChild,ElementRef,AfterViewChecked } from '@angular/core';
 import { SocketService } from '../service/socket.service';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-bot',
   templateUrl: './bot.component.html',
@@ -10,13 +12,14 @@ export class BotComponent implements AfterViewChecked {
   @ViewChild('scrollFrame') scrollFrame!: ElementRef;
   title = 'Simple and EasyChatbot';
   messageArray: any = [];
-  
   messageArrayOptions: any =[];
   synth:any;
   voices:any;
   showChatDiv: boolean = false;
   autoScroll: boolean = false;
-  constructor(private socketService:SocketService) {
+
+  constructor(private socketService:SocketService, private router: Router) {
+
     this.synth = window.speechSynthesis;
     this.voices = this.synth.getVoices();
   }
@@ -50,7 +53,8 @@ export class BotComponent implements AfterViewChecked {
         this.messageArrayOptions = []
         this.messageArrayOptions.push(
           { name: 'bot', message: "New" },
-          { name: 'bot', message: "More Options" }
+          { name: 'bot', message: "More Options" },
+          { name: 'bot', message: "click me"}
         );
         this.message = '';
         break;
@@ -62,15 +66,8 @@ export class BotComponent implements AfterViewChecked {
         this.defaultmessage()
         break;
       }
-      case "IP": {
-        this.message = mess
-        this.messageArray.push({ name: 'you', message: this.message });
-        this.messageArray.push({ name: 'bot', message: "Enter IP Address" });
-        this.message = '';
-        this.messageArrayOptions = []
-        this.messageArrayOptions.push(
-          { name: 'bot', message: "More Options" }
-        );
+      case "click me": {
+        window.location.href = 'https://www.youtube.com/watch?v=vZ_NpLWuL00&list=RDvZ_NpLWuL00&start_radio=1';
         break;
       }
       default: {
